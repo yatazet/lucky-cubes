@@ -83,4 +83,6 @@ int main()
 	{
 		cout << "Ничья!" << endl;
 	}
+	main();
+	return 0;
 }
