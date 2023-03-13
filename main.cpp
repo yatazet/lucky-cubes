@@ -26,52 +26,52 @@ int main()
 	int firstCubes = rand() % 11 + 2;
 	int secondCubes = rand() % 12 + 2;
 	int x;
-	cout << "Òåêóùåå ñîñòîÿíèå: " << currentMoney << endl;
-	cout << "Ïåðâûå êóáèêè: " << firstCubes << endl;
-	cout << "Ñòàâêà: " << endl;
+	cout << "Ð¢ÐµÐºÑƒÑ‰ÐµÐµ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ðµ: " << currentMoney << endl;
+	cout << "ÐŸÐµÑ€Ð²Ñ‹Ðµ ÐºÑƒÐ±Ð¸ÐºÐ¸: " << firstCubes << endl;
+	cout << "Ð¡Ñ‚Ð°Ð²ÐºÐ°: " << endl;
 	cin >> bet;
 	if (bet > currentMoney)
 	{
 		system("cls");
-		cout << "Òåêóùåå ñîñòîÿíèå: " << currentMoney << endl;
-		cout << "Ïåðâûå êóáèêè: " << firstCubes << endl;
-		cout << "Ñëèøêîì Áîëüøàÿ ñòàâêà!" << endl;
+		cout << "Ð¢ÐµÐºÑƒÑ‰ÐµÐµ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ðµ: " << currentMoney << endl;
+		cout << "ÐŸÐµÑ€Ð²Ñ‹Ðµ ÐºÑƒÐ±Ð¸ÐºÐ¸: " << firstCubes << endl;
+		cout << "Ð¡Ð»Ð¸ÑˆÐºÐ¾Ð¼ Ð‘Ð¾Ð»ÑŒÑˆÐ°Ñ ÑÑ‚Ð°Ð²ÐºÐ°!" << endl;
 		cin >> bet;
 	}
 	system("cls");
-	cout << "Òåêóùåå ñîñòîÿíèå: " << currentMoney << endl;
-	cout << "Ïåðâûå êóáèêè: " << firstCubes << endl;
-	cout << "Áîëüøå(1) èëè ìåíüøå(2)?" << endl;
+	cout << "Ð¢ÐµÐºÑƒÑ‰ÐµÐµ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ðµ: " << currentMoney << endl;
+	cout << "ÐŸÐµÑ€Ð²Ñ‹Ðµ ÐºÑƒÐ±Ð¸ÐºÐ¸: " << firstCubes << endl;
+	cout << "Ð‘Ð¾Ð»ÑŒÑˆÐµ(1) Ð¸Ð»Ð¸ Ð¼ÐµÐ½ÑŒÑˆÐµ(2)?" << endl;
 	cin >> x;
 	system("cls");
-	cout << "Ïåðâûå êóáèêè: " << firstCubes << endl;
-	cout << "Âòîðûå êóáèêè: " << secondCubes << endl;
+	cout << "ÐŸÐµÑ€Ð²Ñ‹Ðµ ÐºÑƒÐ±Ð¸ÐºÐ¸: " << firstCubes << endl;
+	cout << "Ð’Ñ‚Ð¾Ñ€Ñ‹Ðµ ÐºÑƒÐ±Ð¸ÐºÐ¸: " << secondCubes << endl;
 	Sleep(2500);
 	if (x == 1 and firstCubes < secondCubes)
 	{
 		system("cls");
-		cout << "Ïîçäðàâÿëþ âû âûéãðàëè " << bet << endl;
+		cout << "ÐŸÐ¾Ð·Ð´Ñ€Ð°Ð²ÑÐ»ÑŽ Ð²Ñ‹ Ð²Ñ‹Ð¹Ð³Ñ€Ð°Ð»Ð¸ " << bet << endl;
 		currentMoney += bet;
 		meta();
 	}
 	if (x == 2 and firstCubes > secondCubes)
 	{
 		system("cls");
-		cout << "Ïîçäðàâÿëþ âû âûéãðàëè " << bet << endl;
+		cout << "ÐŸÐ¾Ð·Ð´Ñ€Ð°Ð²ÑÐ»ÑŽ Ð²Ñ‹ Ð²Ñ‹Ð¹Ð³Ñ€Ð°Ð»Ð¸ " << bet << endl;
 		currentMoney += bet;
 		meta();
 	}
 	if (x == 1 and firstCubes > secondCubes)
 	{
 		system("cls");
-		cout << "Âû ïðîèãðàëè " << bet << endl;
+		cout << "Ð’Ñ‹ Ð¿Ñ€Ð¾Ð¸Ð³Ñ€Ð°Ð»Ð¸ " << bet << endl;
 		currentMoney -= bet;
 		meta();
 	}
 	if (x == 2 and firstCubes < secondCubes)
 	{
 		system("cls");
-		cout << "Âû ïðîèãðàëè " << bet << endl;
+		cout << "Ð’Ñ‹ Ð¿Ñ€Ð¾Ð¸Ð³Ñ€Ð°Ð»Ð¸ " << bet << endl;
 		currentMoney -= bet;
 		meta();
 	}
@@ -81,6 +81,6 @@ int main()
 	}
 	if (firstCubes == secondCubes)
 	{
-		cout << "Íè÷üÿ!" << endl;
+		cout << "ÐÐ¸Ñ‡ÑŒÑ!" << endl;
 	}
 }
