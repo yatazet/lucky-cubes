@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <windows.h>
+#include <cstdlib>
+#include <random>
 using namespace std;
 int currentMoney = 1000;
 void meta()
@@ -22,9 +24,13 @@ int main()
 	srand(time(NULL));
 	setlocale(LC_ALL, "");
 	read();
+	random_device r;
+	default_random_engine e(r());
+	uniform_int_distribution<int> dist(3, 11);
+	uniform_int_distribution<int> befg(2, 12);
 	int bet;
-	int firstCubes = rand() % 11 + 2;
-	int secondCubes = rand() % 12 + 2;
+	int firstCubes = dist(e);
+	int secondCubes = befg(e);
 	int x;
 	cout << "Текущее состояние: " << currentMoney << endl;
 	cout << "Первые кубики: " << firstCubes << endl;
@@ -37,6 +43,13 @@ int main()
 		cout << "Первые кубики: " << firstCubes << endl;
 		cout << "Слишком Большая ставка!" << endl;
 		cin >> bet;
+	}
+	if (bet == 0)
+	{
+		cout << "Слишком маленькая ставка!" << endl;
+		Sleep(1500);
+		system("cls");
+		main();
 	}
 	system("cls");
 	cout << "Текущее состояние: " << currentMoney << endl;
@@ -82,6 +95,14 @@ int main()
 	if (firstCubes == secondCubes)
 	{
 		cout << "Ничья!" << endl;
+	}
+	if (currentMoney == 0)
+	{
+		system("cls");
+		cout << "Слишком мало денег, баланс обновлен!" << endl;
+		currentMoney += 1000;
+		Sleep(500);
+		meta();
 	}
 	main();
 	return 0;
